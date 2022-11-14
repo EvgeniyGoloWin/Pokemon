@@ -3,6 +3,7 @@ import {Card} from "./Card";
 import {PokemonInfo} from "./PokemonInfo";
 import axios from "axios";
 
+
 export const Main = () => {
     const [pokemonData,setPokemonData] = useState([]);
     const [loading,setLoading] = useState(true);
@@ -10,7 +11,6 @@ export const Main = () => {
     const [nextUrl,setNextUrl] = useState();
     const [prevUrl,setPrevUrl] = useState();
     const [pokemonDex,setPokemonDex] = useState()
-    console.log(prevUrl)
 
     const pokemonFunc = async () => {
         setLoading(true)
@@ -18,9 +18,7 @@ export const Main = () => {
         setNextUrl(res.data.next);
         setPrevUrl(res.data.previous)
         getPokemon(res.data.results)
-        console.log(res.data)
         setLoading(false)
-            //console.log(pokemonData)
     }
 
     const getPokemon = async (res)=> {
