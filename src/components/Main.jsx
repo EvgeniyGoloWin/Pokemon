@@ -3,7 +3,6 @@ import {Card} from "./Card";
 import {PokemonInfo} from "./PokemonInfo";
 import axios from "axios";
 
-
 export const Main = () => {
     const [pokemonData,setPokemonData] = useState([]);
     const [loading,setLoading] = useState(true);
@@ -21,12 +20,12 @@ export const Main = () => {
         setLoading(false)
     }
 
-    const getPokemon = async (res)=> {
-        res.map(async (item)=>{
+    const getPokemon = async (res) => {
+        res.map(async (item) => {
             const result = await axios.get(item.url)
-            setPokemonData(state=> {
+            setPokemonData(state => {
                 state = [...state,result.data]
-                 state.sort((a,b)=>a.id>b.id?1:-1)
+                 state.sort((a,b) => a.id - b.id)
                 return state;
             })
         })
@@ -40,12 +39,12 @@ export const Main = () => {
                 <div className='left-content'>
                     <Card pokemon={pokemonData} loading={loading} infoPokemon={pokemon=>setPokemonDex(pokemon)}/>
                     <div className='btn-group'>
-                        { prevUrl && <button onClick={()=>{
+                        { prevUrl && <button onClick={() => {
                             setPokemonData([])
                             setUrl(prevUrl)
                         }}>Previous</button>}
 
-                        {nextUrl && <button onClick={()=>{
+                        {nextUrl && <button onClick={() => {
                             setPokemonData([])
                             setUrl(nextUrl)
                         }}>Next</button>}

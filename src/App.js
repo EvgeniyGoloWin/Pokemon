@@ -4,9 +4,7 @@ import './components/style.scss'
 
 function App() {
   return (
-    <>
     <Main/>
-    </>
   );
 }
 

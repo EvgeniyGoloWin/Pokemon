@@ -17,12 +17,14 @@ body {
   padding-top: 100px;
   .left-content,right-content {
   flex-basis: 50%;
+
   }
   .left-content {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
     grid-gap: 2rem;
   }
+
   .right-content {
     width: 50%;
     text-align: center;
@@ -31,15 +33,18 @@ body {
     top: 100px;
     right: 10px;
   }
+
   .right-content img {
     margin: 2rem;
     height: 180px;
   }
+
   .right-content h1 {
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
   }
+
   .abilities {
     width: 30%;
     margin: auto;
@@ -55,6 +60,7 @@ body {
     padding: 0.5rem;
     font-size: 12px;
     border-radius: 8px;
+    white-space: nowrap;
   }
 
   .base-stat {
